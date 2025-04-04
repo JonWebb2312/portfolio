@@ -45,3 +45,32 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const themeSwitcher = document.getElementById("theme-switcher");
+
+    // Load saved theme from localStorage
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        themeSwitcher.value = savedTheme;
+    }
+
+    // Listen for theme changes
+    themeSwitcher.addEventListener("change", (e) => {
+        const selectedTheme = e.target.value;
+        document.documentElement.setAttribute("data-theme", selectedTheme);
+        localStorage.setItem("theme", selectedTheme); // Save theme to localStorage
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.getElementById("contact-form");
+    const thankYouMessage = document.getElementById("thank-you-message");
+
+    contactForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Prevent the default form submission behavior
+        thankYouMessage.style.display = "block"; // Show the thank you message
+        contactForm.reset(); // Optionally reset the form fields
+    });
+});
