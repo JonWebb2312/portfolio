@@ -31,6 +31,10 @@ body {
     padding: 0;
 }
 
+li {
+    list-style: none; /* Remove default list styles */
+}
+
 /* Header */
 header {
     background-color: var(--primary-color);
@@ -62,6 +66,74 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: var(--button-hover-color);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white; /* White color for the hamburger icon */
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+nav ul.hidden {
+    display: none; /* Hide navigation links */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger menu on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+        background-color: var(--primary-color); /* Background color for the dropdown */
+        position: absolute;
+        top: 4rem;
+        right: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav ul {
+        display: none; /* Show navigation links in a row on larger screens */
+    }
+    header nav ul li {
+        display: block; /* Stack navigation items vertically */
+    }
+
+    nav ul.visible {
+        display: flex; /* Show navigation links when toggled */
+    }
+
+    nav ul li a {
+        color: white; /* White text for menu items */
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Slight hover effect */
+        border-radius: 4px;
+    }
 }
 
 /* Main Content */
