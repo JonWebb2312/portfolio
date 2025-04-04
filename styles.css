@@ -22,6 +22,11 @@ a:focus, button:focus, input:focus, textarea:focus {
     box-sizing: border-box;
 }
 
+/* Enable smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -33,6 +38,46 @@ body {
 
 li {
     list-style: none; /* Remove default list styles */
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 /* Header */
@@ -237,6 +282,13 @@ section#skills li {
     align-items: center;
     justify-content: center;
 }
+
+section#skills a {  
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
 
 section#skills li:hover {
     transform: translateY(-5px); /* Slight lift effect on hover */
