@@ -4,15 +4,50 @@ a:focus, button:focus, input:focus, textarea:focus {
     outline-offset: 2px; /* Space between the element and the outline */
 }
 
-/* Define CSS Variables */
+/* Default Theme */
 :root {
-    --primary-color: #008080; /* Teal */
+    --primary-color: #00796b; /* Dark teal for better contrast */
     --secondary-color: #333; /* Dark gray */
     --background-color: #f9f9f9; /* Light gray */
-    --text-color: #555; /* Medium gray */
-    --heading-color: #008080; /* Teal */
-    --button-hover-color: #006666; /* Darker teal */
+    --text-color: #212121; /* Darker gray for better readability */
+    --heading-color: #004d40; /* Darker teal for headings */
+    --button-hover-color: #00574b; /* Darker teal for hover effects */
     --white-color: #ffffff; /* White */
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --primary-color: #f4a261; /* Light orange */
+    --secondary-color: #264653; /* Dark teal */
+    --background-color: #fefae0; /* Very light yellow */
+    --text-color: #264653; /* Dark teal for text */
+    --heading-color: #2a9d8f; /* Teal for headings */
+    --button-hover-color: #e76f51; /* Reddish orange for hover effects */
+    --white-color: #ffffff; /* White */
+}
+
+/* Style the theme-switcher dropdown */
+#theme-switcher {
+    background-color: var(--primary-color); /* Match the menu background */
+    color: var(--white-color); /* Match the menu text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Add rounded corners */
+    padding: 0.5rem 1rem; /* Add padding for better spacing */
+    font-size: 1rem; /* Match the font size of menu items */
+    cursor: pointer; /* Add pointer cursor for interactivity */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Add hover effect for the dropdown */
+#theme-switcher:hover {
+    background-color: var(--button-hover-color); /* Use hover color */
+    color: var(--white-color); /* Ensure text remains visible */
+}
+
+/* Ensure the dropdown aligns with other menu items */
+nav ul li {
+    display: flex;
+    align-items: center; /* Vertically center the dropdown */
 }
 
 /* General Reset */
