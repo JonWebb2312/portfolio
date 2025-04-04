@@ -1,0 +1,10 @@
+<svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="180" height="130" fill="#e8f5e9" stroke="black" stroke-width="2" rx="10" ry="10"/>
+  <text x="30" y="50" font-family="monospace" font-size="18" fill="black">def my_function():</text>
+  <text x="30" y="80" font-family="monospace" font-size="18" fill="black">  print("Hello")</text>
+  <text x="30" y="110" font-family="monospace" font-size="18" fill="black">my_function()</text>
+  <rect x="150" y="90" width="40" height="40" fill="#4caf50" rx="5" ry="5">
+    <title>Py</title>
+  </rect>
+  <text x="170" y="115" font-family="sans-serif" font-size="16" fill="white">Py</text>
+</svg>

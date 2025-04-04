@@ -1,0 +1,253 @@
+/* Add focus styles for interactive elements */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid blue; /* Blue outline for focus */
+    outline-offset: 2px; /* Space between the element and the outline */
+}
+
+/* Define CSS Variables */
+:root {
+    --primary-color: #008080; /* Teal */
+    --secondary-color: #333; /* Dark gray */
+    --background-color: #f9f9f9; /* Light gray */
+    --text-color: #555; /* Medium gray */
+    --heading-color: #008080; /* Teal */
+    --button-hover-color: #006666; /* Darker teal */
+    --white-color: #ffffff; /* White */
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+header nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--button-hover-color);
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--heading-color);
+    padding-bottom: 0.5rem;
+}
+
+section p, section ul {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+/* Projects Section */
+div#project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 1.5rem; /* Space between cards */
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+#project-list a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+figure {
+    margin: 0;
+    padding-top: 1rem;
+    text-align: center;
+    background: var(--white-color); /* Card background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Card shadow */
+    overflow: hidden; /* Ensure content stays within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+figure:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+figure img {
+    max-width: 100%;
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images are cropped proportionally */
+}
+
+figcaption {
+    padding: 1rem;
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* Skills Section */
+section#skills ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+section#skills li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between the icon and the text */
+    margin-bottom: 0.5rem; /* Space between list items */
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+section#skills li::before {
+    content: '';
+    display: inline-block;
+    width: 24px; /* Set icon width */
+    height: 24px; /* Set icon height */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Add specific icons for each skill */
+section#skills li:nth-child(1)::before {
+    background-image: url('images/icons/html.svg'); /* Path to HTML icon */
+}
+
+section#skills li:nth-child(2)::before {
+    background-image: url('images/icons/css.svg'); /* Path to CSS icon */
+}
+
+section#skills li:nth-child(3)::before {
+    background-image: url('images/icons/javascript.svg'); /* Path to JavaScript icon */
+}
+
+section#skills li:nth-child(4)::before {
+    background-image: url('images/icons/python.svg'); /* Path to Python icon */
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+form input, form textarea, form button {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 128, 128, 0.5);
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+}

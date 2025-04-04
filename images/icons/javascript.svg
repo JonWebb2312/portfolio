@@ -1,0 +1,10 @@
+<svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="180" height="130" fill="#f8f8f8" stroke="black" stroke-width="2" rx="10" ry="10"/>
+  <text x="30" y="50" font-family="monospace" font-size="18" fill="black">function myFunction() {</text>
+  <text x="30" y="80" font-family="monospace" font-size="18" fill="black">  console.log("Hello");</text>
+  <text x="30" y="110" font-family="monospace" font-size="18" fill="black">}</text>
+  <rect x="150" y="90" width="40" height="40" fill="#fdd835" rx="5" ry="5">
+    <title>JS</title>
+  </rect>
+  <text x="170" y="115" font-family="sans-serif" font-size="16" fill="black">JS</text>
+</svg>
